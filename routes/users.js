@@ -59,9 +59,9 @@ router.post('/login', cors.corsWithOptions, passport.authenticate('local'), (req
 });
 
 router.get('/logout', cors.corsWithOptions, (req, res) => {
-  if (req.session) {
-    req.session.destroy();
-    res.clearCookie('session-id');
+  if (req) {
+    //req.session.destroy();
+    //res.clearCookie('session-id');
     res.redirect('/');
   }
   else {
